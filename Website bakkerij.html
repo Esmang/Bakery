@@ -1,0 +1,2856 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Twin La Pain | Scandinavian Bakery
+    </title>
+
+
+    <style>
+
+        /* ========================================
+           KLEUREN
+        ======================================== */
+
+        :root {
+
+            --cream: #f4f1e9;
+            --sand: #e6dfd2;
+            --taupe: #c8b9a7;
+
+            --green: #26352d;
+
+            --brown: #7b5f48;
+
+            --text: #24322b;
+
+            --muted: #526158;
+
+            --danger: #8b3d35;
+
+        }
+
+
+
+        /* ========================================
+           BASIS
+        ======================================== */
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            background: var(--cream);
+
+            color: var(--text);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            line-height: 1.6;
+
+        }
+
+
+        button {
+
+            font: inherit;
+
+        }
+
+
+        .container {
+
+            width:
+                min(
+                    1120px,
+                    calc(100% - 48px)
+                );
+
+            margin: 0 auto;
+
+        }
+
+
+
+        /* ========================================
+           HEADER
+        ======================================== */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 30;
+
+            background:
+                rgba(
+                    244,
+                    241,
+                    233,
+                    0.97
+                );
+
+            border-bottom:
+                1px solid
+                rgba(
+                    36,
+                    50,
+                    43,
+                    0.15
+                );
+
+        }
+
+
+        .header-inner {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            min-height: 80px;
+
+        }
+
+
+        .logo {
+
+            color: var(--text);
+
+            text-decoration: none;
+
+            font-size: 26px;
+
+            font-weight: 600;
+
+            letter-spacing: -1px;
+
+        }
+
+
+
+        /* NAVIGATIE */
+
+        .header-right {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 32px;
+
+        }
+
+
+        nav {
+
+            display: flex;
+
+            gap: 30px;
+
+        }
+
+
+        nav a {
+
+            color: var(--text);
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+        }
+
+
+        nav a:hover {
+
+            opacity: 0.6;
+
+        }
+
+
+
+        /* ========================================
+           WINKELMAND KNOP
+        ======================================== */
+
+        .cart-button {
+
+            position: relative;
+
+            background: transparent;
+
+            color: var(--text);
+
+            border:
+                1px solid
+                rgba(
+                    36,
+                    50,
+                    43,
+                    0.25
+                );
+
+            padding:
+                12px
+                17px;
+
+            cursor: pointer;
+
+            transition:
+                all
+                0.2s;
+
+        }
+
+
+        .cart-button:hover {
+
+            background: var(--green);
+
+            color: var(--cream);
+
+        }
+
+
+        .cart-count {
+
+            position: absolute;
+
+            right: -9px;
+
+            top: -10px;
+
+            min-width: 23px;
+
+            height: 23px;
+
+            padding: 0 6px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50px;
+
+            background: var(--brown);
+
+            color: white;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+        }
+
+
+
+        /* ========================================
+           HERO
+        ======================================== */
+
+        .hero {
+
+            display: grid;
+
+            grid-template-columns:
+                1.15fr
+                0.85fr;
+
+            gap: 70px;
+
+            align-items: center;
+
+            padding:
+                100px
+                0;
+
+        }
+
+
+        .eyebrow {
+
+            color: var(--brown);
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        h1 {
+
+            font-size:
+                clamp(
+                    55px,
+                    7vw,
+                    88px
+                );
+
+            font-weight: 500;
+
+            line-height: 0.98;
+
+            letter-spacing: -4px;
+
+        }
+
+
+        .hero-text {
+
+            max-width: 580px;
+
+            margin-top: 30px;
+
+            color: var(--muted);
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+        }
+
+
+        .hero-link {
+
+            display: inline-block;
+
+            margin-top: 36px;
+
+            color: var(--text);
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            border-bottom:
+                1px solid
+                var(--text);
+
+            padding-bottom: 3px;
+
+        }
+
+
+
+        /* ========================================
+           TODAY'S BAKE
+        ======================================== */
+
+        .feature {
+
+            min-height: 440px;
+
+            padding: 40px;
+
+            background: var(--taupe);
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: flex-end;
+
+        }
+
+
+        .feature-label {
+
+            margin-bottom: auto;
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        .feature-icon {
+
+            font-size: 65px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .feature h2 {
+
+            font-size: 30px;
+
+            font-weight: 500;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .feature p {
+
+            color: #39483f;
+
+        }
+
+
+
+        /* ========================================
+           ASSORTIMENT
+        ======================================== */
+
+        .bakery {
+
+            background: var(--sand);
+
+            padding:
+                90px
+                0;
+
+            border-top:
+                1px solid
+                rgba(
+                    36,
+                    50,
+                    43,
+                    0.15
+                );
+
+            border-bottom:
+                1px solid
+                rgba(
+                    36,
+                    50,
+                    43,
+                    0.15
+                );
+
+        }
+
+
+        .section-heading {
+
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content: space-between;
+
+            gap: 40px;
+
+        }
+
+
+        .section-heading h2 {
+
+            font-size: 45px;
+
+            font-weight: 500;
+
+            letter-spacing: -2px;
+
+        }
+
+
+        .section-description {
+
+            max-width: 400px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+        }
+
+
+
+        /* ========================================
+           PRODUCTEN
+        ======================================== */
+
+        .products {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            margin-top: 50px;
+
+            border-top:
+                1px solid
+                rgba(
+                    36,
+                    50,
+                    43,
+                    0.2
+                );
+
+        }
+
+
+        .product {
+
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                auto;
+
+            gap: 30px;
+
+            width: 100%;
+
+            min-height: 170px;
+
+            padding:
+                30px
+                0;
+
+            background: transparent;
+
+            color: var(--text);
+
+            border: 0;
+
+            border-bottom:
+                1px solid
+                rgba(
+                    36,
+                    50,
+                    43,
+                    0.2
+                );
+
+            text-align: left;
+
+            cursor: pointer;
+
+            transition:
+                background
+                0.2s;
+
+        }
+
+
+        .product:nth-child(odd) {
+
+            padding-right: 35px;
+
+        }
+
+
+        .product:nth-child(even) {
+
+            padding-left: 35px;
+
+            border-left:
+                1px solid
+                rgba(
+                    36,
+                    50,
+                    43,
+                    0.2
+                );
+
+        }
+
+
+        .product:hover {
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.35
+                );
+
+        }
+
+
+        .product h3 {
+
+            font-size: 21px;
+
+            font-weight: 500;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .product p {
+
+            max-width: 350px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+        }
+
+
+        .product-price {
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            white-space: nowrap;
+
+        }
+
+
+        .add-product {
+
+            display: block;
+
+            margin-top: 15px;
+
+            color: var(--brown);
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+        }
+
+
+
+        /* ========================================
+           STORY
+        ======================================== */
+
+        .story {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 60px;
+
+            padding:
+                120px
+                0;
+
+        }
+
+
+        .story h2 {
+
+            font-size: 48px;
+
+            line-height: 1.05;
+
+            font-weight: 500;
+
+            letter-spacing: -2px;
+
+        }
+
+
+        .story-text {
+
+            max-width: 550px;
+
+            margin-top: 30px;
+
+            color: var(--muted);
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+        }
+
+
+
+        /* ========================================
+           VISIT
+        ======================================== */
+
+        .visit {
+
+            background: var(--green);
+
+            color: var(--cream);
+
+            padding:
+                90px
+                0;
+
+        }
+
+
+        .visit-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 80px;
+
+        }
+
+
+        .visit .eyebrow {
+
+            color: #d0baa2;
+
+        }
+
+
+        .visit h2 {
+
+            font-size: 45px;
+
+            font-weight: 500;
+
+            letter-spacing: -2px;
+
+        }
+
+
+        .address {
+
+            margin-top: 25px;
+
+            color: #dce1dc;
+
+            line-height: 1.9;
+
+        }
+
+
+        .hours {
+
+            border-top:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.2
+                );
+
+        }
+
+
+        .hour {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            padding:
+                16px
+                0;
+
+            border-bottom:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.12
+                );
+
+            font-size: 14px;
+
+        }
+
+
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+
+        footer {
+
+            padding: 25px;
+
+            background: var(--green);
+
+            color: #b9c1bb;
+
+            border-top:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.1
+                );
+
+            text-align: center;
+
+            font-size: 12px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+
+        /* ========================================
+           OVERLAY
+        ======================================== */
+
+        .cart-overlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 100;
+
+            background:
+                rgba(
+                    20,
+                    28,
+                    24,
+                    0.45
+                );
+
+            display: none;
+
+        }
+
+
+        .cart-overlay.visible {
+
+            display: block;
+
+        }
+
+
+
+        /* ========================================
+           WINKELMAND PANEL
+        ======================================== */
+
+        .cart-panel {
+
+            position: fixed;
+
+            z-index: 101;
+
+            top: 0;
+
+            right: -460px;
+
+            width:
+                min(
+                    430px,
+                    100%
+                );
+
+            height: 100vh;
+
+            background: var(--cream);
+
+            display: flex;
+
+            flex-direction: column;
+
+            transition:
+                right
+                0.3s ease;
+
+            box-shadow:
+                -15px
+                0
+                50px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.15
+                );
+
+        }
+
+
+        .cart-panel.visible {
+
+            right: 0;
+
+        }
+
+
+
+        /* ========================================
+           CART HEADER
+        ======================================== */
+
+        .cart-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 25px;
+
+            border-bottom:
+                1px solid
+                rgba(
+                    36,
+                    50,
+                    43,
+                    0.15
+                );
+
+        }
+
+
+        .cart-header h2 {
+
+            font-size: 25px;
+
+            font-weight: 500;
+
+        }
+
+
+        .cart-close {
+
+            width: 40px;
+
+            height: 40px;
+
+            background: transparent;
+
+            border: 0;
+
+            cursor: pointer;
+
+            font-size: 30px;
+
+        }
+
+
+
+        /* ========================================
+           CART CONTENT
+        ======================================== */
+
+        .cart-content {
+
+            flex: 1;
+
+            overflow-y: auto;
+
+            padding:
+                10px
+                25px;
+
+        }
+
+
+        .empty-cart {
+
+            padding:
+                60px
+                0;
+
+            color: var(--muted);
+
+            text-align: center;
+
+        }
+
+
+
+        /* ========================================
+           CART PRODUCT
+        ======================================== */
+
+        .cart-product {
+
+            padding:
+                20px
+                0;
+
+            border-bottom:
+                1px solid
+                rgba(
+                    36,
+                    50,
+                    43,
+                    0.15
+                );
+
+        }
+
+
+        .cart-product-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+        }
+
+
+        .cart-product-name {
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+        }
+
+
+        .cart-product-price {
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+        }
+
+
+        .cart-product-buttons {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-top: 15px;
+
+        }
+
+
+
+        /* ========================================
+           QUANTITY
+        ======================================== */
+
+        .quantity {
+
+            display: flex;
+
+            border:
+                1px solid
+                rgba(
+                    36,
+                    50,
+                    43,
+                    0.25
+                );
+
+        }
+
+
+        .quantity button {
+
+            width: 35px;
+
+            height: 35px;
+
+            border: 0;
+
+            background: transparent;
+
+            cursor: pointer;
+
+            font-size: 18px;
+
+        }
+
+
+        .quantity button:hover {
+
+            background: var(--sand);
+
+        }
+
+
+        .quantity span {
+
+            width: 35px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 14px;
+
+        }
+
+
+        .delete-product {
+
+            border: 0;
+
+            background: transparent;
+
+            color: var(--danger);
+
+            font-size: 12px;
+
+            text-decoration: underline;
+
+            cursor: pointer;
+
+        }
+
+
+
+        /* ========================================
+           CART BOTTOM
+        ======================================== */
+
+        .cart-bottom {
+
+            padding: 25px;
+
+            background: var(--sand);
+
+            border-top:
+                1px solid
+                rgba(
+                    36,
+                    50,
+                    43,
+                    0.15
+                );
+
+        }
+
+
+        .cart-total {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 18px;
+
+            font-size: 18px;
+
+        }
+
+
+        .order-button {
+
+            width: 100%;
+
+            padding: 16px;
+
+            border: 0;
+
+            background: var(--green);
+
+            color: var(--cream);
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+        }
+
+
+        .order-button:disabled {
+
+            opacity: 0.4;
+
+            cursor: not-allowed;
+
+        }
+
+
+        .order-note {
+
+            margin-top: 10px;
+
+            color: var(--muted);
+
+            text-align: center;
+
+            font-size: 11px;
+
+        }
+
+
+
+        /* ========================================
+           TOEGEVOEGD MELDING
+        ======================================== */
+
+        #message {
+
+            position: fixed;
+
+            z-index: 200;
+
+            left: 50%;
+
+            bottom: 30px;
+
+            transform:
+                translateX(-50%)
+                translateY(20px);
+
+            padding:
+                12px
+                20px;
+
+            background: var(--green);
+
+            color: var(--cream);
+
+            font-size: 13px;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                all
+                0.2s;
+
+        }
+
+
+        #message.visible {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform:
+                translateX(-50%)
+                translateY(0);
+
+        }
+
+
+
+        /* ========================================
+           MOBILE
+        ======================================== */
+
+        @media (max-width: 800px) {
+
+            .container {
+
+                width:
+                    calc(
+                        100% - 32px
+                    );
+
+            }
+
+
+            nav {
+
+                display: none;
+
+            }
+
+
+            .hero {
+
+                grid-template-columns:
+                    1fr;
+
+                padding:
+                    70px
+                    0;
+
+            }
+
+
+            h1 {
+
+                letter-spacing:
+                    -3px;
+
+            }
+
+
+            .section-heading {
+
+                display: block;
+
+            }
+
+
+            .section-description {
+
+                margin-top: 20px;
+
+            }
+
+
+            .products {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .product:nth-child(odd),
+            .product:nth-child(even) {
+
+                padding:
+                    25px
+                    0;
+
+                border-left: 0;
+
+            }
+
+
+            .story {
+
+                grid-template-columns:
+                    1fr;
+
+                padding:
+                    80px
+                    0;
+
+            }
+
+
+            .visit-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 50px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+
+<!-- ========================================
+     HEADER
+======================================== -->
+
+<header>
+
+    <div class="container header-inner">
+
+        <a
+            href="#top"
+            class="logo"
+        >
+            twin la pain
+        </a>
+
+
+        <div class="header-right">
+
+            <nav>
+
+                <a href="#bakery">
+                    Bakery
+                </a>
+
+                <a href="#story">
+                    Our story
+                </a>
+
+                <a href="#visit">
+                    Visit
+                </a>
+
+            </nav>
+
+
+            <button
+                type="button"
+                class="cart-button"
+                onclick="openCart()"
+            >
+
+                Winkelmand
+
+                <span
+                    id="cartCount"
+                    class="cart-count"
+                >
+                    0
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<main id="top">
+
+
+
+    <!-- ========================================
+         HERO
+    ======================================== -->
+
+    <section class="container hero">
+
+        <div>
+
+            <p class="eyebrow">
+                Nordic bakery · Gouda
+            </p>
+
+
+            <h1>
+                Slow baked.<br>
+                Simply good.
+            </h1>
+
+
+            <p class="hero-text">
+
+                Scandinavisch bakwerk met
+                een Franse knipoog.
+
+                Desem, boter, kardemom
+                en goede koffie.
+
+                Rustig gemaakt,
+                elke ochtend vers.
+
+            </p>
+
+
+            <a
+                href="#bakery"
+                class="hero-link"
+            >
+                Ontdek de bakery →
+            </a>
+
+        </div>
+
+
+
+        <div class="feature">
+
+            <p class="feature-label">
+                Today's bake
+            </p>
+
+
+            <div class="feature-icon">
+                ◎
+            </div>
+
+
+            <h2>
+                Kardemummabulle
+            </h2>
+
+
+            <p>
+
+                Boterig, aromatisch en
+                perfect bij de eerste
+                koffie of tijdens fika.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         ASSORTIMENT
+    ======================================== -->
+
+    <section
+        class="bakery"
+        id="bakery"
+    >
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        Fresh from the oven
+                    </p>
+
+
+                    <h2>
+                        Nordic favourites
+                    </h2>
+
+                </div>
+
+
+                <p class="section-description">
+
+                    Klik op een artikel
+                    om het direct aan je
+                    winkelmandje toe te voegen.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- ==================================
+                 PRODUCTEN STAAN ECHT IN DE HTML
+            =================================== -->
+
+            <div class="products">
+
+
+
+                <!-- KANELBULLE -->
+
+                <button
+                    type="button"
+                    class="product"
+                    onclick="addToCart('kanelbulle')"
+                >
+
+                    <div>
+
+                        <h3>
+                            Kanelbulle
+                        </h3>
+
+                        <p>
+
+                            Zacht Zweeds kaneelbroodje
+                            met kardemom en parelsuiker.
+
+                        </p>
+
+                        <span class="add-product">
+                            + Voeg toe
+                        </span>
+
+                    </div>
+
+                    <span class="product-price">
+                        € 3,25
+                    </span>
+
+                </button>
+
+
+
+                <!-- KARDEMUMMABULLE -->
+
+                <button
+                    type="button"
+                    class="product"
+                    onclick="addToCart('kardemummabulle')"
+                >
+
+                    <div>
+
+                        <h3>
+                            Kardemummabulle
+                        </h3>
+
+                        <p>
+
+                            Gevlochten Zweeds broodje
+                            met boter en aromatische
+                            kardemom.
+
+                        </p>
+
+                        <span class="add-product">
+                            + Voeg toe
+                        </span>
+
+                    </div>
+
+                    <span class="product-price">
+                        € 3,50
+                    </span>
+
+                </button>
+
+
+
+                <!-- RUGBRØD -->
+
+                <button
+                    type="button"
+                    class="product"
+                    onclick="addToCart('rugbrod')"
+                >
+
+                    <div>
+
+                        <h3>
+                            Rugbrød
+                        </h3>
+
+                        <p>
+
+                            Donker Deens roggebrood
+                            met zaden en een
+                            stevige korst.
+
+                        </p>
+
+                        <span class="add-product">
+                            + Voeg toe
+                        </span>
+
+                    </div>
+
+                    <span class="product-price">
+                        € 5,25
+                    </span>
+
+                </button>
+
+
+
+                <!-- SURDEGSBRÖD -->
+
+                <button
+                    type="button"
+                    class="product"
+                    onclick="addToCart('surdegsbrod')"
+                >
+
+                    <div>
+
+                        <h3>
+                            Surdegsbröd
+                        </h3>
+
+                        <p>
+
+                            Lang gerezen
+                            Scandinavisch
+                            zuurdesembrood.
+
+                        </p>
+
+                        <span class="add-product">
+                            + Voeg toe
+                        </span>
+
+                    </div>
+
+                    <span class="product-price">
+                        € 5,50
+                    </span>
+
+                </button>
+
+
+
+                <!-- SEMLA -->
+
+                <button
+                    type="button"
+                    class="product"
+                    onclick="addToCart('semla')"
+                >
+
+                    <div>
+
+                        <h3>
+                            Semla
+                        </h3>
+
+                        <p>
+
+                            Luchtig kardemombroodje
+                            met amandelvulling
+                            en room.
+
+                        </p>
+
+                        <span class="add-product">
+                            + Voeg toe
+                        </span>
+
+                    </div>
+
+                    <span class="product-price">
+                        € 4,25
+                    </span>
+
+                </button>
+
+
+
+                <!-- FIKA BOX -->
+
+                <button
+                    type="button"
+                    class="product"
+                    onclick="addToCart('fika-box')"
+                >
+
+                    <div>
+
+                        <h3>
+                            Fika box
+                        </h3>
+
+                        <p>
+
+                            Vier verschillende
+                            Nordic zoete broodjes
+                            om samen te delen.
+
+                        </p>
+
+                        <span class="add-product">
+                            + Voeg toe
+                        </span>
+
+                    </div>
+
+                    <span class="product-price">
+                        € 12,50
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         OUR STORY
+    ======================================== -->
+
+    <section id="story">
+
+        <div class="container story">
+
+            <div>
+
+                <p class="eyebrow">
+                    Less, but better
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Geen haast.<br>
+                    Geen overdaad.
+                </h2>
+
+
+                <p class="story-text">
+
+                    Bij twin la pain draait
+                    het om eenvoud.
+
+                    Een kleine kaart,
+                    mooie ingrediënten en
+                    tijd voor deeg om
+                    smaak te ontwikkelen.
+
+                    Scandinavische rust
+                    ontmoet de liefde
+                    voor goed brood.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         VISIT
+    ======================================== -->
+
+    <section
+        class="visit"
+        id="visit"
+    >
+
+        <div class="container visit-grid">
+
+            <div>
+
+                <p class="eyebrow">
+                    Visit us
+                </p>
+
+
+                <h2>
+                    Bread, buns & fika.
+                </h2>
+
+
+                <p class="address">
+
+                    Marktstraat 12<br>
+
+                    2801 AB Gouda<br>
+
+                    info@twinlapain.nl
+
+                </p>
+
+            </div>
+
+
+
+            <div class="hours">
+
+
+                <div class="hour">
+
+                    <span>
+                        Ma — vr
+                    </span>
+
+                    <span>
+                        07:30 — 18:00
+                    </span>
+
+                </div>
+
+
+                <div class="hour">
+
+                    <span>
+                        Za
+                    </span>
+
+                    <span>
+                        08:00 — 17:00
+                    </span>
+
+                </div>
+
+
+                <div class="hour">
+
+                    <span>
+                        Zo
+                    </span>
+
+                    <span>
+                        08:30 — 14:00
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==================================================
+     OVERLAY
+======================================== -->
+
+<div
+    id="cartOverlay"
+    class="cart-overlay"
+    onclick="closeCart()"
+></div>
+
+
+
+<!-- ========================================
+     WINKELMAND
+======================================== -->
+
+<aside
+    id="cartPanel"
+    class="cart-panel"
+>
+
+
+    <div class="cart-header">
+
+        <h2>
+            Jouw winkelmand
+        </h2>
+
+
+        <button
+            type="button"
+            class="cart-close"
+            onclick="closeCart()"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+
+    <div
+        id="cartContent"
+        class="cart-content"
+    >
+
+        <p class="empty-cart">
+            Je winkelmandje is nog leeg.
+        </p>
+
+    </div>
+
+
+
+    <div class="cart-bottom">
+
+        <div class="cart-total">
+
+            <span>
+                Totaal
+            </span>
+
+
+            <strong id="cartTotal">
+                € 0,00
+            </strong>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="orderButton"
+            class="order-button"
+            onclick="placeOrder()"
+            disabled
+        >
+            Bestellen
+        </button>
+
+
+        <p class="order-note">
+
+            Demo website ·
+            betalingen zijn nog niet gekoppeld.
+
+        </p>
+
+    </div>
+
+
+</aside>
+
+
+
+<!-- ========================================
+     MELDING
+======================================== -->
+
+<div id="message"></div>
+
+
+
+
+<script>
+
+
+/* ============================================
+   PRODUCTEN
+============================================ */
+
+const products = {
+
+    "kanelbulle": {
+
+        name: "Kanelbulle",
+
+        price: 3.25
+
+    },
+
+
+    "kardemummabulle": {
+
+        name: "Kardemummabulle",
+
+        price: 3.50
+
+    },
+
+
+    "rugbrod": {
+
+        name: "Rugbrød",
+
+        price: 5.25
+
+    },
+
+
+    "surdegsbrod": {
+
+        name: "Surdegsbröd",
+
+        price: 5.50
+
+    },
+
+
+    "semla": {
+
+        name: "Semla",
+
+        price: 4.25
+
+    },
+
+
+    "fika-box": {
+
+        name: "Fika box",
+
+        price: 12.50
+
+    }
+
+};
+
+
+
+/* ============================================
+   WINKELMAND LADEN
+
+   Extra try/catch toegevoegd.
+   Ook als oude localStorage-data kapot is,
+   blijft de website hierdoor werken.
+============================================ */
+
+let cart = {};
+
+
+try {
+
+    const savedCart =
+        localStorage.getItem(
+            "twinLaPainCart"
+        );
+
+
+    if (savedCart) {
+
+        cart =
+            JSON.parse(
+                savedCart
+            );
+
+    }
+
+}
+
+catch (error) {
+
+    console.log(
+        "Oude winkelmand kon niet worden geladen."
+    );
+
+
+    cart = {};
+
+}
+
+
+
+/* ============================================
+   EURO PRIJS
+============================================ */
+
+function formatPrice(price) {
+
+    return new Intl.NumberFormat(
+        "nl-NL",
+        {
+
+            style: "currency",
+
+            currency: "EUR"
+
+        }
+
+    ).format(price);
+
+}
+
+
+
+/* ============================================
+   PRODUCT TOEVOEGEN
+============================================ */
+
+function addToCart(productId) {
+
+
+    /* Controleren of product bestaat */
+
+    if (!products[productId]) {
+
+        console.error(
+            "Product bestaat niet:",
+            productId
+        );
+
+        return;
+
+    }
+
+
+    /* Aantal verhogen */
+
+    if (cart[productId]) {
+
+        cart[productId] =
+            cart[productId] + 1;
+
+    }
+
+    else {
+
+        cart[productId] = 1;
+
+    }
+
+
+    saveCart();
+
+
+    showMessage(
+
+        products[productId].name
+        +
+        " toegevoegd aan je winkelmand"
+
+    );
+
+}
+
+
+
+/* ============================================
+   WINKELMAND OPSLAAN
+============================================ */
+
+function saveCart() {
+
+
+    try {
+
+        localStorage.setItem(
+
+            "twinLaPainCart",
+
+            JSON.stringify(cart)
+
+        );
+
+    }
+
+    catch (error) {
+
+        console.log(
+            "Winkelmand kon niet worden opgeslagen."
+        );
+
+    }
+
+
+    renderCart();
+
+}
+
+
+
+/* ============================================
+   AANTAL VERHOGEN
+============================================ */
+
+function increaseProduct(productId) {
+
+
+    if (!products[productId]) {
+
+        return;
+
+    }
+
+
+    if (!cart[productId]) {
+
+        cart[productId] = 0;
+
+    }
+
+
+    cart[productId]++;
+
+
+    saveCart();
+
+}
+
+
+
+/* ============================================
+   AANTAL VERLAGEN
+============================================ */
+
+function decreaseProduct(productId) {
+
+
+    if (!cart[productId]) {
+
+        return;
+
+    }
+
+
+    cart[productId]--;
+
+
+    if (cart[productId] <= 0) {
+
+        delete cart[productId];
+
+    }
+
+
+    saveCart();
+
+}
+
+
+
+/* ============================================
+   PRODUCT VERWIJDEREN
+============================================ */
+
+function deleteProduct(productId) {
+
+
+    if (cart[productId]) {
+
+        delete cart[productId];
+
+    }
+
+
+    saveCart();
+
+}
+
+
+
+/* ============================================
+   WINKELMAND OPBOUWEN
+============================================ */
+
+function renderCart() {
+
+
+    /*
+       Eerst de HTML-elementen ophalen.
+       Als een element ontbreekt,
+       stopt de functie veilig.
+    */
+
+
+    const cartContent =
+        document.getElementById(
+            "cartContent"
+        );
+
+
+    const cartCount =
+        document.getElementById(
+            "cartCount"
+        );
+
+
+    const cartTotal =
+        document.getElementById(
+            "cartTotal"
+        );
+
+
+    const orderButton =
+        document.getElementById(
+            "orderButton"
+        );
+
+
+    if (
+        !cartContent ||
+        !cartCount ||
+        !cartTotal ||
+        !orderButton
+    ) {
+
+        console.error(
+            "Een onderdeel van het winkelmandje ontbreekt."
+        );
+
+        return;
+
+    }
+
+
+
+    let totalQuantity = 0;
+
+    let totalPrice = 0;
+
+    let html = "";
+
+
+
+    /*
+       Door alle producten
+       in het winkelmandje lopen
+    */
+
+    Object.keys(cart).forEach(
+
+        function (productId) {
+
+
+            const product =
+                products[productId];
+
+
+            const quantity =
+                Number(
+                    cart[productId]
+                );
+
+
+            /*
+               Als oud/onbekend product
+               in localStorage staat:
+               negeren.
+            */
+
+            if (
+                !product ||
+                !quantity ||
+                quantity <= 0
+            ) {
+
+                return;
+
+            }
+
+
+
+            totalQuantity +=
+                quantity;
+
+
+            const productTotal =
+                product.price
+                *
+                quantity;
+
+
+            totalPrice +=
+                productTotal;
+
+
+
+            /*
+               BELANGRIJK:
+
+               Hier gebruiken we onclick
+               rechtstreeks in de HTML.
+
+               Daardoor krijgen we niet meer
+               de null.addEventListener-fout
+               uit je screenshot.
+            */
+
+
+            html += `
+
+                <div class="cart-product">
+
+
+                    <div class="cart-product-top">
+
+                        <span class="cart-product-name">
+
+                            ${product.name}
+
+                        </span>
+
+
+                        <span class="cart-product-price">
+
+                            ${formatPrice(productTotal)}
+
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="cart-product-buttons">
+
+
+                        <div class="quantity">
+
+
+                            <button
+                                type="button"
+                                onclick="decreaseProduct('${productId}')"
+                                aria-label="Aantal verlagen"
+                            >
+                                −
+                            </button>
+
+
+                            <span>
+                                ${quantity}
+                            </span>
+
+
+                            <button
+                                type="button"
+                                onclick="increaseProduct('${productId}')"
+                                aria-label="Aantal verhogen"
+                            >
+                                +
+                            </button>
+
+
+                        </div>
+
+
+
+                        <button
+                            type="button"
+                            class="delete-product"
+                            onclick="deleteProduct('${productId}')"
+                        >
+                            Verwijderen
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+            `;
+
+        }
+
+    );
+
+
+
+    /* LEEG WINKELMANDJE */
+
+    if (totalQuantity === 0) {
+
+        html = `
+
+            <p class="empty-cart">
+
+                Je winkelmandje
+                is nog leeg.
+
+            </p>
+
+        `;
+
+    }
+
+
+
+    /*
+       HTML in winkelmand zetten
+    */
+
+    cartContent.innerHTML =
+        html;
+
+
+
+    /*
+       Teller rechtsboven
+    */
+
+    cartCount.textContent =
+        totalQuantity;
+
+
+
+    /*
+       Totaal
+    */
+
+    cartTotal.textContent =
+        formatPrice(
+            totalPrice
+        );
+
+
+
+    /*
+       Bestellen aan/uit
+    */
+
+    orderButton.disabled =
+        totalQuantity === 0;
+
+}
+
+
+
+/* ============================================
+   WINKELMAND OPENEN
+============================================ */
+
+function openCart() {
+
+
+    const panel =
+        document.getElementById(
+            "cartPanel"
+        );
+
+
+    const overlay =
+        document.getElementById(
+            "cartOverlay"
+        );
+
+
+    if (panel) {
+
+        panel.classList.add(
+            "visible"
+        );
+
+    }
+
+
+    if (overlay) {
+
+        overlay.classList.add(
+            "visible"
+        );
+
+    }
+
+}
+
+
+
+/* ============================================
+   WINKELMAND SLUITEN
+============================================ */
+
+function closeCart() {
+
+
+    const panel =
+        document.getElementById(
+            "cartPanel"
+        );
+
+
+    const overlay =
+        document.getElementById(
+            "cartOverlay"
+        );
+
+
+    if (panel) {
+
+        panel.classList.remove(
+            "visible"
+        );
+
+    }
+
+
+    if (overlay) {
+
+        overlay.classList.remove(
+            "visible"
+        );
+
+    }
+
+}
+
+
+
+/* ============================================
+   MELDING
+============================================ */
+
+let messageTimer;
+
+
+function showMessage(text) {
+
+
+    const message =
+        document.getElementById(
+            "message"
+        );
+
+
+    if (!message) {
+
+        return;
+
+    }
+
+
+    message.textContent =
+        text;
+
+
+    message.classList.add(
+        "visible"
+    );
+
+
+    clearTimeout(
+        messageTimer
+    );
+
+
+    messageTimer =
+        setTimeout(
+
+            function () {
+
+                message.classList.remove(
+                    "visible"
+                );
+
+            },
+
+            1800
+
+        );
+
+}
+
+
+
+/* ============================================
+   BESTELLEN
+============================================ */
+
+function placeOrder() {
+
+
+    const numberOfProducts =
+        Object.values(cart)
+        .reduce(
+
+            function (
+                total,
+                quantity
+            ) {
+
+                return (
+                    total
+                    +
+                    Number(quantity)
+                );
+
+            },
+
+            0
+
+        );
+
+
+    if (
+        numberOfProducts === 0
+    ) {
+
+        return;
+
+    }
+
+
+    alert(
+
+        "Je bestelling staat klaar! " +
+        "Dit is momenteel een demo, " +
+        "dus er wordt nog geen betaling uitgevoerd."
+
+    );
+
+}
+
+
+
+/* ============================================
+   ESCAPE SLUIT WINKELMAND
+============================================ */
+
+document.addEventListener(
+
+    "keydown",
+
+    function (event) {
+
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeCart();
+
+        }
+
+    }
+
+);
+
+
+
+/* ============================================
+   START WEBSITE
+
+   DOMContentLoaded voorkomt dat JavaScript
+   elementen probeert te gebruiken voordat
+   de browser de HTML heeft ingeladen.
+============================================ */
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    function () {
+
+        renderCart();
+
+    }
+
+);
+
+
+</script>
+
+
+</body>
+
+</html>
+          
